@@ -2,61 +2,150 @@
     margin: 0;
     padding: 0;
     color: #fff;
-    font-family: Roboto, sans-serif;
+    //font-family: Roboto, sans-serif;
     box-sizing: border-box;
 }
+$crvena_boja : #A62120;
 
 //dodati hovere na dugmice
+//proveriti alt-ove na svim slikama
+//kod malih slika staviti media da kada se postave da bude u jednom redu 3 da se promeni width slika na 50% i onda ce uvek bili ili 2 ili 4 slike.
 body {
     background-color: rgba(0, 0, 0, 0.94);
 }
 
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+    
+}
+@media screen and (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+//manje od 992px ce biti hambureg
+@media screen and (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+    #header {
+        font-size: 14px;
+        ul li {
+            padding: 2.5rem 0 2rem 1.2rem;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+    #header {
+        font-size: 16px;
+        ul li {
+            padding: 2.5rem 0 2rem 1.2rem;
+        }
+    }
+}
+@media screen and (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
+    #header {
+        font-size: 20px;
+        ul li {
+            padding: 2.5rem 0 2rem 1.5rem;
+        }
+    }
+}
+
+.btn {
+    border-radius: 40px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 47px;
+    width: 174px;
+    line-height: 27px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn_red {
+    color: #fff;
+    background-color: $crvena_boja;
+    border: 1px solid #FFF;
+}
+
+.btn_white {
+    color: #252525;
+    background-color: #fff;
+    border: 1px solid #F00;
+}
+
+.centriran_logo {
+    //nakon dodavanja hr-a klase .hr dodati sliku i staviti joj klasu .centriran-logo da bi se on postavio na sred hr-a
+    position: relative;
+    bottom: 36px
+}
+
+.centriraj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hr {
+    border-bottom: 1px solid gray;
+}
+
 #header {
     width: 100%;
+    height: 90px;
     background-color: #B50014;
-    nav {
+    .container {
         display: flex;
-        flex-direction: row;
-
+        justify-content: space-between;
         img {
-            position: absolute;
-            top: 0;
-            left: 15%;
-            z-index: 50;
+            z-index: 5;
+            width: max-content;
+            height: max-content;
         }
         ul {
             display: flex;
             flex-direction: row;
             list-style-type: none;
-            margin-left: calc(15% + 150px);
     
             li {
-                padding: 2.5rem 0 2rem 2.5rem;
-                
                 a {
                 text-decoration: none;
                 list-style: none; 
                 }
-
-                #download-txt::before {
-                        content: url('../images/downloadlogo.png');
-                        margin-right: 5px;
-                }
+                
             }
         }
     }
 }
 
 #time-div {
-    padding: 0.375rem 15% 0.5rem 0;
+    width: 100%;
+    padding: 0.375rem 0 0.5rem 0;
     display: flex;
     align-items: center;
-    justify-content: end;
-
-    span {
-        padding-top: 6px;
-        padding-left: 6.95px;
-        font-size: 14px;
+    justify-content: center;
+    z-index: 1;
+    .container {
+        display: flex;
+        justify-content: end;
+        span {
+            font-size: 14px;
+        }
     }
 }
 
@@ -94,6 +183,7 @@ body {
 }
 
 #food-div-first {
+    z-index: 1;
     height: 65.926vh;
     min-height: 712px; //ne znam da li da ostavim ovo
     width: 100%;
@@ -127,14 +217,10 @@ body {
             margin-bottom: 66px;
         }
 
-        button {
-            width: 174px;
-            height: 47px;
-            margin-right: 16px;
-            border-radius: 40px;
-            border: 1px solid #FFF;
-            background: #A62120;
+        .btn_red {
+            margin: auto 8px;
         }
+        
     }
 
     #first-food-img {
@@ -165,7 +251,7 @@ body {
 #food-div-second {
     min-height: 642px;
     height: 60vh;
-    background-color: #A62120;;
+    background-color: $crvena_boja;
     display: flex;
     flex-direction: row;
 
@@ -192,17 +278,210 @@ body {
 
         button {
             margin-top: 3rem;
-            color: #252525;
-            background-color: #fff;;
-            padding: 12px 58px 13px 57px;
-            border-radius: 40px;
-            border: 1px solid #F00;
         }
     }
 
     #second-food-img {
-        background: url("../images/foodimg2.jpg");
+        background: url("../images/foodimg5.jpg");
         background-position: center;
         background-size: cover;
     }
 }
+
+#food-div-third {
+    min-height: min-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rebeccapurple;
+    padding-bottom: 20px;
+    
+    #third-food-container {
+        width: 60%;
+        height: 100%;
+        background-color: aqua;
+    }
+
+    #third-food-txt {
+        background-color: red;
+        width: 100%;
+        height: 40%;
+        padding-bottom: 20px;
+        position: relative;
+
+        .btn {
+            margin: 20px 0;
+        }        
+
+    }
+
+    #third-food-imgs {
+        display: flex;
+        flex-wrap: wrap;
+        
+        img {
+            margin: 10px;
+            flex: 1;
+        }
+
+    }
+
+}
+
+#food-div-fourth {
+    width: 100%;
+    display: flex;
+    background-color: #B50014;
+    height: 100%;
+
+    
+    #fourth-food-img {
+        width: 50%;
+        img {
+            max-width: 100%;
+            height: 100%;
+        }
+    }
+
+    #fourth-food-txt {
+        width: 50%;
+        background-color: $crvena_boja;
+    }
+}
+
+#food-div-fifth {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/foodimg7.png");
+    background-attachment: fixed;
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    .btn {
+        margin: 20px;
+    }
+}
+
+#food-div-sixth {
+    display: flex;
+    justify-content: center;
+    .container {
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: brown;
+        height: 100%;
+        #sixth-food-first {
+            width: 100%;
+
+            #genussnetz-div {
+                display: flex;
+                width: 100%;
+                margin: 70px 0;
+
+                #genussnetz-logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                }
+                #genussnetz-txt {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    width: 50%;
+
+                    a {
+                        margin-top: 50px;
+                    }
+                }
+            }
+        }
+        #sixth-food-second {
+            width: 100%;
+
+            #auszeichnungen-div {
+                display: flex;
+                width: 100%;
+                margin: 70px 0;
+
+                #auszeichnungen-content {
+                    display: flex;
+                    width: 100%;
+                    #auszeichnungen-txt {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30%;
+                    }
+                    #auszeichnungen-imgs {
+                        display: flex;
+                        width: 70%;
+                        > div {
+                            width: 25%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        #sixth-food-third {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            >span {
+                margin: 0 0 20px 0;
+            }
+
+            #lower-slider-div {
+                margin: 50px 0;
+                height: 300px;
+                width: 100%;
+                background-color: burlywood;
+            }
+
+            .btn {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+#footer {
+    width: 100%;
+
+    #lighter-footer {
+        background-color: #B50014;
+        width: 100%;
+        padding: 10px 0;
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            #footer-address {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #footer-links {
+                display: flex;
+                align-items: center;
+                img {
+                    margin: 2px;
+                }
+            }
+        }
+    }
+}
+

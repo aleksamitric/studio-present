@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://kit.fontawesome.com/483685b425.js" crossorigin="anonymous"></script> <!--ikonice-->
     <title>BRATH</title>
 </head>
 <body>
-    <!--treba ::before za ubacivanje ikonice ispred downloada-->
-    <!--smanjiti je i bice dobra valjda-->
     <div id="header">
-            <nav>
+            <div class="container">
                 <img id="logo"src="images/logo.png" alt="logo image">
-                <ul>
+                <ul id="navbar">
                     <li><a href="#">Die Metzgerei</a></li>
                     <li><a href="#">Dry Aged</a></li>
                     <li><a href="#">Fleischversand</a></li>
@@ -21,13 +20,15 @@
                     <li><a href="#">Tagesessen</a></li>
                     <li><a href="#">Impressum</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a id="download-txt" href="#">download</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-pdf"></i>download</a></li>
                 </ul>
-            </nav>
+            </div>
     </div>
     <!--treba ::before za slicicu sata-->
     <div id="time-div">
-        <span>Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30</span>
+        <div class="container">
+            <span>Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30</span>
+        </div>
     </div>
 
     <div id="slider-div">
@@ -45,8 +46,8 @@
                 <h1>Dry aged</h1>
                 <h2>Alte Wutz, Dry Aged</h2>
                 <p>Halt amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat. Wiener Schnitzel aute irure dolor in reprehenderit Guten Tag mollit anim Stuttgart. <br> id latine indoctum complectitur HugoClub Mate mea meliore denique nominavi id. Ohrwurm expetenda nam an, his ei Reise euismod assentior.</p>
-                <button>Dry aged</button>
-                <button>Alte Wurtz</button>
+                <a class="btn btn_red" href="#">Dry aged</a>
+                <a class="btn btn_red" href="#">Alte Wurtz</a>
             </div>
         </div>
         <div id="first-food-img">
@@ -71,10 +72,128 @@
                     <li>1 Tag</li>
                     <li>lernen Sie die Kunst des Grillens</li>
                 </ul>
-                <button>Grillkurs</button>
+                <a class="btn btn_white">Grillkurs</a>
             </div>
         </div>
         <div id="second-food-img"></div>
+    </div>
+
+    <div id="food-div-third">
+        <div id="third-food-container">
+            <div id="third-food-txt">
+                <h1>Das Handwerk</h1>
+                <h2>alles über unsere Hausgemachte Produkte</h2>
+                <p>Halt amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
+                <p>Wiener Schnitzel aute irure dolor in Guten Tag mollit anim Stuttgart.</p>
+                <p>id latine indoctum complectitur HugoClub Mate mea meliore denique nominavi id. Ohrwurm expetenda nam an, his ei Reise euismod assentior</p>
+                <a class="btn btn_red">Das Hendwerk</a>
+                <hr class="hr">
+                <img src="./images/line.png" class="centriran_logo" alt="BRATH logo">
+            </div>
+            <div id="third-food-imgs">
+                <img src="./images/wurstchen.png" alt="slika kobasica">
+                <img src="./images/hahnchen.png" alt="slika pilećeg mesa">
+                <img src="./images/schwein.png" alt="slika svinjskog mesa">
+                <img src="./images/rind.png" alt="slika goveđeg mesa">
+            </div>
+        </div>
+    </div>
+
+    <div id="food-div-fourth">
+        <div id="fourth-food-img"><img src="./images/foodimg6.jpg" alt=""></div>
+        <div id="fourth-food-txt">
+            <h1>Custome spices for your meat</h1>
+            <h2>Turnbeutel nostrud exercitation ullamco Sprechen Sie deutsch</h2>
+            <p>Odio principes iracundia Müller Rice pri. Ut vel solum mandamus, Kartoffelkopf natum adversarium ei ius, diam Schmetterling honestatis eum.</p>
+            <p>Wiener Schnitzel amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+
+    <div id="food-div-fifth">
+        <h1>Fleischversand</h1>
+        <a href="#" class="btn btn_white">Jetzt bestellen</a>
+    </div>
+
+    <div id="food-div-sixth">
+        <div class="container">
+            <div id="sixth-food-first">
+                <div id="genussnetz-div">
+                    <div id="genussnetz-logo">
+                        <img src="./images/genussnetz.png" alt="genussnetz logo">
+                    </div>                    
+                    <div id="genussnetz-txt">
+                        <h1>Metzgerei Brath ist Mitglied im Genussnetzwerk</h1>
+                        <a href="#" class="btn btn_red">Gehen zu site</a>
+                    </div>
+                </div>              
+                <hr class="hr">
+                <div class="centriraj">  
+                    <img src="./images/line.png" alt="BRATH logo" class="centriran_logo">
+                </div>
+            </div>
+            <div id="sixth-food-second">
+                <div id="auszeichnungen-div">
+                    <div id="auszeichnungen-content">
+                        <div id="auszeichnungen-txt">
+                            <h1>Auszeichnungen</h1>
+                        </div>
+                        <div id="auszeichnungen-imgs">
+                            <div id="a-img1-div">
+                                <img src="./images/nagrada1.png" alt="logo nagrade">
+                                <p>Tollit argumentum genau Saepe lobortis</p>
+                            </div>
+                            <div id="a-img2-div">
+                                <img src="./images/nagrada2.png" alt="logo nagrade">
+                                <p>Schneewittchen denique</p>
+                            </div>
+                            <div id="a-img3-div">
+                                <img src="./images/nagrada3.png" alt="logo nagrade">
+                                <p>Grimms Märchen expetenda</p>
+                            </div>
+                            <div id="a-img4-div">
+                                <img src="./images/nagrada4.png" alt="logo nagrade">
+                                <p>Mettwurst mei ullum gloriatur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="centriraj">
+                    <img src="./images/line.png" alt="BRATH logo" class="centriran_logo">
+                </div>
+            </div>
+            <div id="sixth-food-third">
+                <span>Empfehlungs</span>
+                <h1>Was die Leute über uns sagen</h1>
+                <div id="lower-slider-div">prostor za slajder</div>
+                <a href="#" class="btn btn_red">Alle Berichte</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="lighter-footer">
+            <div class="container">
+                <div id="footer-address">
+                    <span>Klauprechtstraße 25 <br>76137 Karlsruhe, Germany</span>
+                    <span>+49 721 358060</span>
+                    <span>info@partyservice-brath.de</span>
+                </div>
+                <div id="footer-logo">
+                    <img src="./images/line.png" alt="BRATH logo">
+                </div>
+                <div id="footer-links">
+                    <span>Besuchen Sie uns auf:</span>
+                    <img src="./images/twitter.png" alt="Twitter logo">
+                    <img src="./images/facebook.png" alt="Facebook logo">
+                    <img src="./images/instagram.png" alt="Instagram logo">
+                    <img src="./images/youtube.png" alt="Youtube logo">
+                </div>
+            </div>
+        </div>
+        <div id="darker-footer">
+
+        </div>
     </div>
 </body>
 </html>
