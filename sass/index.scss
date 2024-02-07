@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     color: #fff;
-    //font-family: Roboto, sans-serif;
+    font-family: Roboto, sans-serif;
     box-sizing: border-box;
 }
 $crvena_boja : #A62120;
@@ -15,55 +15,10 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 1320px;
     margin: 0 auto;
+}
 
-    
-}
-@media screen and (min-width: 576px) {
-    .container {
-        width: 540px;
-    }
-}
-@media screen and (min-width: 768px) {
-    .container {
-        width: 720px;
-    }
-}
-//manje od 992px ce biti hambureg
-@media screen and (min-width: 992px) {
-    .container {
-        width: 960px;
-    }
-    #header {
-        font-size: 14px;
-        ul li {
-            padding: 2.5rem 0 2rem 1.2rem;
-        }
-    }
-}
-@media screen and (min-width: 1200px) {
-    .container {
-        width: 1140px;
-    }
-    #header {
-        font-size: 16px;
-        ul li {
-            padding: 2.5rem 0 2rem 1.2rem;
-        }
-    }
-}
-@media screen and (min-width: 1400px) {
-    .container {
-        width: 1320px;
-    }
-    #header {
-        font-size: 20px;
-        ul li {
-            padding: 2.5rem 0 2rem 1.5rem;
-        }
-    }
-}
 
 .btn {
     border-radius: 40px;
@@ -81,12 +36,28 @@ body {
     color: #fff;
     background-color: $crvena_boja;
     border: 1px solid #FFF;
+    transition: color 0.3s, border 0.3s, background-color 0.3s;
+    &:hover {
+        color: $crvena_boja;
+        border: 1px solid #252525;
+        background-color: #fff;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }  
 }
 
 .btn_white {
     color: #252525;
     background-color: #fff;
     border: 1px solid #F00;
+    transition: color 0.3s, border 0.3s, background-color 0.3s;
+    &:hover {
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: #252525;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }  
 }
 
 .centriran_logo {
@@ -118,14 +89,21 @@ body {
             height: max-content;
         }
         ul {
+            margin-top: 37px;
+            height: 16px;
             display: flex;
-            flex-direction: row;
+            align-items: center;
             list-style-type: none;
     
             li {
+                margin: 2.5rem 0 2rem 2.5rem;
+                transition: transform 0.3s;
+                &:hover {
+                    transform: translateY(-10px);
+                }
                 a {
                 text-decoration: none;
-                list-style: none; 
+                list-style: none;
                 }
                 
             }
@@ -183,147 +161,167 @@ body {
 }
 
 #food-div-first {
-    z-index: 1;
-    height: 65.926vh;
-    min-height: 712px; //ne znam da li da ostavim ovo
     width: 100%;
     display: flex;
-    flex-direction: row;
-
-    #first-food-txt, #first-food-img {
-        flex: 1;
-        height: 100%;
-    }
+    justify-content: start;
+    .container {
+        padding: 80px 110px;
+        display: flex;
+        #first-food-txt-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            h1 {
+                font-size: 2rem;
+                font-weight: 700;
+                line-height: 131.25%;
+            }
     
-    #first-food-txt-container {
-        width: 430px;
-        margin: 22.472% auto auto 43%;
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 131.25%;
-        }
-
-        h2 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 2.5625rem;
-        }
-
-        p {
-            font-weight: 300;
-            line-height: 150%;
-            margin-bottom: 66px;
-        }
-
-        .btn_red {
-            margin: auto 8px;
-        }
-        
-    }
-
-    #first-food-img {
-        #first-food-img-container{
-            margin: 15.5% auto auto 5px;
-            width: 55.9375%; //55.9375
-
-            #first-food-img1{
-                width: 100%;
-                height: auto; //326px
+            h2 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 2.5625rem;
+            }
+    
+            p {
+                font-weight: 300;
+                line-height: 150%;
+                margin-bottom: 10px;
+                padding-right: 50px;
+            }
+            &>div {
+                margin-top: 50px;
+                .btn_red {
+                    margin: 8px;
+                }
             }
 
-            #first-food-imgs {
-                padding-left: 9px;
-                height: auto;
+        }
+        #first-food-img {
+            width: 50%;
+            display: flex;
+            flex: 1;
+            #first-food-img-container {
+                max-width: 100%;
                 display: flex;
-                flex-direction: row;
-                width: 100%;
-                img {
-                    margin: 8px;
-                    width: 31%;
+                flex-direction: column;
+                &>img {
+                    max-width: 100%;
+                    height: auto;
+                }
+                &>#first-food-imgs {
+                    max-width: 100%;
+                    height: auto;
+                    display: flex;
+                    &>img {
+                        flex: 1;
+                        max-width: 35%;
+                        height: auto;
+                        margin: 10px 10px 0 0;
+                    }
                 }
             }
         }
     }
-}
+} 
 
 #food-div-second {
-    min-height: 642px;
-    height: 60vh;
-    background-color: $crvena_boja;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    .container {
+        display: flex;
 
-    #second-food-txt, #second-food-img{
-        flex: 1;
-        height: 100%;
-    }
+        #second-txt-container {
+            width: 50%;
+            max-width: 50%;
+            background-color: $crvena_boja;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    #second-food-txt-container{
-        margin: 19.93% auto auto 43.54%;
-
-        h1 {
-            font-weight: 700;
-            line-height: 131.25%;
+            #second-txt {
+                h1 {
+                    font-weight: 700;
+                    line-height: 42px;
+                }
+                ul li {
+                    font-weight: 300;
+                    line-height: 1.5;
+                    margin-top: 10px;
+                }
+                a {
+                    margin-top: 20px;
+                }
+            }
         }
 
-        ul {
-            margin-top: 1.5rem;
-            li {
-            font-weight: 300;
-            line-height: 150%;
-            }   
+        img {
+            max-height: 100%;
+            max-width: 50%;
+            object-fit: cover;
         }
-
-        button {
-            margin-top: 3rem;
-        }
-    }
-
-    #second-food-img {
-        background: url("../images/foodimg5.jpg");
-        background-position: center;
-        background-size: cover;
     }
 }
 
 #food-div-third {
     min-height: min-content;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: rebeccapurple;
     padding-bottom: 20px;
     
     #third-food-container {
-        width: 60%;
-        height: 100%;
-        background-color: aqua;
-    }
-
-    #third-food-txt {
-        background-color: red;
-        width: 100%;
-        height: 40%;
-        padding-bottom: 20px;
-        position: relative;
-
-        .btn {
-            margin: 20px 0;
-        }        
-
-    }
-
-    #third-food-imgs {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         
-        img {
-            margin: 10px;
-            flex: 1;
-        }
+        padding: 0 80px;
+        height: 100%;
 
+        #third-food-txt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 20px;
+            position: relative;
+            h1{
+                text-align: center;
+                margin: 100px 0 10px 0;
+                font-weight: 700;
+            }
+            h2 {
+                text-align: center;
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 50px;
+            }
+            p {
+                padding-top: 5px;
+                width: 52%;
+                text-align: center;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+            hr {
+                width: calc(100% - 20px);
+                margin-top: 50px;
+            }
+            .btn {
+                margin: 30px 0;
+            }        
+    
+        }
+        #third-food-imgs {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            img {
+                margin: 10px;
+                flex: 1;
+                max-width: 40%;
+            }
+        }
     }
 
 }
@@ -346,6 +344,21 @@ body {
     #fourth-food-txt {
         width: 50%;
         background-color: $crvena_boja;
+        h1 {
+            font-weight: 700;
+            line-height: 42px;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 20px;
+            margin: 10px 0;
+        }
+        p {
+            line-height: 1.5;
+            font-weight: 300;
+            padding-top: 5px;
+        }
     }
 }
 
@@ -368,11 +381,10 @@ body {
     display: flex;
     justify-content: center;
     .container {
-        padding: 0 50px;
+        padding: 0 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: brown;
         height: 100%;
         #sixth-food-first {
             width: 100%;
@@ -421,13 +433,23 @@ body {
                     #auszeichnungen-imgs {
                         display: flex;
                         width: 70%;
-                        > div {
+                        >div {
                             width: 25%;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
                             align-items: center;
+                            font-weight: 300;
+                            color: rgba(255, 255, 255, 0.51);
+                            line-height: 18.75px;
                             text-align: center;
+                            >div {
+                                width: 122px;
+                                height: 122px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
                         }
                     }
                     
@@ -468,6 +490,7 @@ body {
         .container {
             display: flex;
             justify-content: space-between;
+            position: relative;
 
             #footer-address {
                 display: flex;
@@ -481,7 +504,91 @@ body {
                     margin: 2px;
                 }
             }
+            #footer-logo {
+                position: absolute;
+                left: calc(50% - 36px);
+            }
+            
+        }
+    }
+
+    #darker-footer {
+        width: 100%;
+        background-color: #66000B;
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            #copyright span{
+                font-size: 12px;
+                line-height: 28px;
+            }
+
+            #author span{
+                line-height: 28px;
+                color: rgba(255, 255, 255, 0.5);
+                a {
+                    font-style: italic;
+                    color: rgba(255, 255, 255, 0.78);
+                } 
+            }
         }
     }
 }
 
+@media screen and (max-width: 1399.99px) {
+    .container {
+        width: 1140px;
+    }
+    #header {
+        font-size: 15px;
+
+        ul li {
+            margin: 2.5rem 0 2rem 1.6rem !important;
+        }
+    }
+    #third-food-imgs img{
+        min-width: 45%;
+    }
+
+}
+@media screen and (max-width: 1199.9px) {
+    .container {
+        width: 960px;
+    }
+    #header {
+        font-size: 13px;
+
+        ul li {
+            margin: 2.5rem 0 2rem 1.1rem !important;
+        }
+    }
+    #food-div-first {
+        .container{
+            padding: 40px 55px !important;
+            
+            #first-food-txt-container>div {
+                margin-top: 20px !important;
+            }
+        }
+                    
+    }
+}
+@media screen and (max-width: 991.9px) {
+    .container {
+        width: 720px;
+    }
+}
+@media screen and (max-width: 767.9px) {
+    .container {
+        width: 540px;
+    }
+    #third-food-imgs img{
+        min-width: 40%;
+    }
+}
+@media screen and (max-width: 575.9px) {
+    .container {
+        width: 100%;
+    }
+}
