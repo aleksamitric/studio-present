@@ -15,3 +15,28 @@ mode.onclick = function(){
         });
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var scrolled = false;
+
+    window.addEventListener("scroll", function() {
+        if (!scrolled) {
+            scrolled = true;
+            setTimeout(function() {
+                showPopup();
+            }, 1000);
+        }
+    });
+});
+
+var popup = document.getElementById("popup");
+function showPopup() {
+    popup.style.display = "block";
+    popup.classList.remove("hidden");
+}
+
+var icon = document.querySelector('#popup-close i');
+
+icon.addEventListener('click', function() {
+    popup.classList.add('hidden');
+});

@@ -1,27 +1,155 @@
+$crvena_boja : #A62120;
+$bela_boja : #fff;
+$crna_boja : #000;
+
 * {
     margin: 0;
     padding: 0;
     color: #fff;
     font-family: Roboto, sans-serif;
     box-sizing: border-box;
+
+    body {
+        background-color: rgba(0, 0, 0, 0.94);
+    }
+    
+    .container {
+        width: 1320px;
+        margin: 0 auto;
+    }
+    
+    .btn {
+        border-radius: 40px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        height: 47px;
+        width: 174px;
+        line-height: 27px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .btn_red {
+        color: $bela_boja;
+        background-color: $crvena_boja;
+        border: 1px solid #FFF;
+        transition: color 0.3s, border 0.3s, background-color 0.3s;
+        &:hover {
+            color: $crvena_boja;
+            border: 1px solid #252525;
+            background-color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }  
+    }
+    
+    .btn_white {
+        color: #252525;
+        background-color: #fff;
+        border: 1px solid #F00;
+        transition: color 0.3s, border 0.3s, background-color 0.3s;
+        &:hover {
+            color: #fff;
+            border: 1px solid #fff;
+            background-color: #252525;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }  
+    }
+    
+    .centriran_logo {
+        //nakon dodavanja hr-a klase .hr dodati sliku i staviti joj klasu .centriran-logo da bi se on postavio na sred hr-a
+        position: relative;
+        bottom: 36px
+    }
+    
+    .centriraj {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hr {
+        border-bottom: 1px solid gray;
+    }
 }
-$crvena_boja : #A62120;
-$bela_boja : #fff;
-$crna_boja : #000;
 
-body {
-    //background-color: rgba(0, 0, 0, 0.94);
-    background-color: $crna_boja;
+#popup {
+    * {color: #000 !important;}
+    position: fixed !important;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    display: none;
+    border-radius: 10px;
+    
+    #popup-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        span {
+            font-size: 15px;
+        }
+        #popup-contact {
+            margin-top: 10px;
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            i {
+                border-radius: 5px;
+                padding: 10px !important;
+                background-color: $crvena_boja !important;
+                color: #fff !important;
+                cursor: pointer;
+            }
+            i:hover {
+                background-color: #ff001e !important;
+            }
+        }
+        
+        #popup-close {
+            position: absolute !important;
+            top: 3px;
+            right: 3px;
+            font-size: 25px;
+            i {
+                color: $crvena_boja !important;
+            }
+            i:hover {
+                color: #ff001e !important;
+            }
+        }
+    }
+}
 
+.hidden {
+    display: none !important;
 }
 
 .light-mode {
+    // ne rade promenljive u light-mode
     // $bela_boja : #000;
     // $crna_boja : #fff;
+    
+    /*
     & *:not(i) {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
     }
+    */
     background-color: #fff;
+    #popup {
+        background-color: #000 !important;
+        * {
+            color: #fff !important;
+        }
+    }
     #time-div .container #mode-div {
         #moon-div {
             background-color: #fff !important;
@@ -55,67 +183,6 @@ body {
         }
         
     }
-}
-
-.container {
-    width: 1320px;
-    margin: 0 auto;
-}
-
-.btn {
-    border-radius: 40px;
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 47px;
-    width: 174px;
-    line-height: 27px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.btn_red {
-    color: $bela_boja;
-    background-color: $crvena_boja;
-    border: 1px solid #FFF;
-    transition: color 0.3s, border 0.3s, background-color 0.3s;
-    &:hover {
-        color: $crvena_boja;
-        border: 1px solid #252525;
-        background-color: #fff;
-        font-size: 1.1rem;
-        font-weight: 700;
-    }  
-}
-
-.btn_white {
-    color: #252525;
-    background-color: #fff;
-    border: 1px solid #F00;
-    transition: color 0.3s, border 0.3s, background-color 0.3s;
-    &:hover {
-        color: #fff;
-        border: 1px solid #fff;
-        background-color: #252525;
-        font-size: 1.1rem;
-        font-weight: 700;
-    }  
-}
-
-.centriran_logo {
-    //nakon dodavanja hr-a klase .hr dodati sliku i staviti joj klasu .centriran-logo da bi se on postavio na sred hr-a
-    position: relative;
-    bottom: 36px
-}
-
-.centriraj {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hr {
-    border-bottom: 1px solid gray;
 }
 
 #header {
@@ -169,7 +236,6 @@ body {
         display: flex;
         justify-content: end;
         #mode-div {
-            border-radius: 5px;
             cursor: pointer;
             border: 1px solid black;
             display: flex;
