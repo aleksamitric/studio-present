@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="https://kit.fontawesome.com/483685b425.js" crossorigin="anonymous"></script> <!--ikonice-->
     <title>BRATH</title>
 </head>
 <body>
@@ -27,7 +26,15 @@
 
     <div id="time-div">
         <div class="container">
-            <span><i class="fa-regular fa-clock"></i> Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30</span>
+            <span><i class="fa-regular fa-clock ikonica"></i> Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30</span>
+            <div id="mode-div">
+                <div id="moon-div">
+                    <i class="fa-solid fa-moon" style="color: #fff;" id="moon"></i>
+                </div>
+                <div id="sun-div">
+                    <i class="fa-solid fa-sun" style="color: #000" id="sun"></i>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -79,8 +86,8 @@
                     <a class="btn btn_white">Grillkurs</a>
                 </div>
             </div>
-            <img src="./images/foodimg5.jpg" alt="slika hrane">
         </div>
+        <img src="./images/foodimg5.jpg" alt="slika hrane">
     </div>
 
     <div id="food-div-third">
@@ -107,13 +114,17 @@
     </div>
 
     <div id="food-div-fourth">
-        <div id="fourth-food-img"><img src="./images/foodimg6.jpg" alt=""></div>
-        <div id="fourth-food-txt">
-            <h1>Custome spices for your meat</h1>
-            <h2>Turnbeutel nostrud exercitation ullamco Sprechen Sie deutsch</h2>
-            <p>Odio principes iracundia Müller Rice pri. Ut vel solum mandamus, Kartoffelkopf natum adversarium ei ius, diam Schmetterling honestatis eum.</p>
-            <p>Wiener Schnitzel amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
+        <div id="fourth-food-container" class="container">
+            <div id="fourth-txt-container">
+                <div id="fourth-txt">
+                    <h1>Custome spices for your meat</h1>
+                    <h2>Turnbeutel nostrud exercitation ullamco Sprechen Sie deutsch</h2>
+                    <p>Odio principes iracundia Müller Rice pri. Ut vel solum mandamus, Kartoffelkopf natum adversarium ei ius, diam Schmetterling honestatis eum.</p>
+                    <p>Wiener Schnitzel amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
         </div>
+        <img src="./images/foodimg6.jpg" alt="slika hrane">
     </div>
 
     <div id="food-div-fifth">
@@ -125,8 +136,8 @@
         <div class="container">
             <div id="sixth-food-first">
                 <div id="genussnetz-div">
-                    <div id="genussnetz-logo">
-                        <img src="./images/genussnetz.png" alt="genussnetz logo">
+                    <div id="genussnetz-logo-div">
+                        <img id="genussnetz-logo" src="./images/genussnetz.png" alt="genussnetz logo">
                     </div>                    
                     <div id="genussnetz-txt">
                         <h1>Metzgerei Brath ist Mitglied im Genussnetzwerk</h1>
@@ -209,5 +220,9 @@
             </div>
         </div>
     </div>
+
+
+<script src="https://kit.fontawesome.com/483685b425.js" crossorigin="anonymous"></script> <!--ikonice-->
+<script src="./script.js"></script>
 </body>
 </html>
