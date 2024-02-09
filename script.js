@@ -32,30 +32,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var popup = document.getElementById("popup");
 function showPopup() {
+    document.body.style.overflow = "hidden";
     popup.style.display = "block";
     popup.classList.remove("hidden");
-}
+    }
 
 var icon = document.querySelector('#popup-close i');
 
 icon.addEventListener('click', function() {
+    document.body.style.overflow = "auto";
+    popup.style.display = "none";
     popup.classList.add('hidden');
 });
-
 
 
 //Sakrivanje elemenata na <992px widht
 var hamburgerDiv = document.getElementById("nav-hamburger");
 var navIcon = document.getElementById("nav-icon");
 var logo = document.getElementById("logo");
+var sliderTxt = document.getElementById("slider-txt-container");
 
 function proveriSirinuEkrana() {
   if (window.innerWidth < 992) {
+    swiper.autoplay.start();
+    swiper.pagination.el.classList.add('hidden');
     hamburgerDiv.classList.add("hidden");
     navIcon.classList.remove("hidden");
+    sliderTxt.classList.add("container");
   } else {
+    swiper.autoplay.stop();
     hamburgerDiv.classList.remove("hidden");
     navIcon.classList.add("hidden");
+    sliderTxt.classList.remove("container");
+    swiper.pagination.el.classList.remove('hidden');
   }
 }
 
@@ -80,5 +89,22 @@ navIcon.addEventListener('click', function() {
         navIcon.classList.add('fa-bars');
         navIcon.classList.remove('fa-x');
     }
-
 });
+
+const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 4000, 
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>BRATH</title>
 </head>
 <body>
@@ -43,7 +44,6 @@
 
     <div id="time-div">
         <div class="container">
-            <span><i class="fa-regular fa-clock ikonica"></i> Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30</span>
             <div id="mode-div">
                 <div id="moon-div">
                     <i class="fa-solid fa-moon" style="color: #fff;" id="moon"></i>
@@ -51,6 +51,9 @@
                 <div id="sun-div">
                     <i class="fa-solid fa-sun" style="color: #000" id="sun"></i>
                 </div>
+            </div>
+            <div id="opentime-txt"> 
+                <div><span><i class="fa-regular fa-clock ikonica"></i> Opentime: </div>Di. - Fr.: 07:00 - 13:00 und 15:00 - 18:30. Sa.: 07:30 - 12:30</span>
             </div>
         </div>
     </div>
@@ -61,6 +64,19 @@
                 <h1>Heiko Brath Metzgermeister</h1>
                 <p>Deutsches Ipsum Dolor deserunt dissentias Grimms Märchen et. Tollit argumentum ius an. Pfannkuchen lobortis elaboraret per ne, nam Aperol Spritz probatus pertinax.</p>
             </div>
+        </div>
+        <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="./images/imageforslider.jpg" alt=""></div>
+                    <div class="swiper-slide"> <img src="./images/foodimg1.png" alt=""></div>
+                    <div class="swiper-slide"> <img src="./images/foodimg6.jpg" alt=""></div>
+                </div>
+        
+            <div class="swiper-pagination"></div>
+        
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
         </div>
     </div>
 
@@ -133,12 +149,11 @@
     <div id="food-div-fourth">
         <div id="fourth-food-container" class="container">
             <div id="fourth-txt-container">
-                <div id="fourth-txt">
-                    <h1>Custome spices for your meat</h1>
-                    <h2>Turnbeutel nostrud exercitation ullamco Sprechen Sie deutsch</h2>
-                    <p>Odio principes iracundia Müller Rice pri. Ut vel solum mandamus, Kartoffelkopf natum adversarium ei ius, diam Schmetterling honestatis eum.</p>
-                    <p>Wiener Schnitzel amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
-                </div>
+                <h1>Custome spices for your meat</h1>
+                <h2>Turnbeutel nostrud exercitation ullamco Sprechen Sie deutsch</h2>
+                <p>Odio principes iracundia Müller Rice pri. Ut vel solum mandamus, Kartoffelkopf natum adversarium ei ius, diam Schmetterling honestatis eum.</p>
+                <p>Wiener Schnitzel amet, consectetur Handtasche elit, sed do eiusmod tempor Stuttgart ut labore et dolore magna 99 Luftballons Ut enim ad minim veniam, Turnbeutel nostrud exercitation ullamco laboris nisi Sprechen Sie deutsch aliquip ex ea commodo consequat.</p>
+    
             </div>
         </div>
         <img src="./images/foodimg6.jpg" alt="slika hrane">
@@ -218,11 +233,14 @@
                     <img src="./images/line.png" alt="BRATH logo">
                 </div>
                 <div id="footer-links">
-                    <span>Besuchen Sie uns auf:</span>
-                    <img src="./images/twitter.png" alt="Twitter logo">
-                    <img src="./images/facebook.png" alt="Facebook logo">
-                    <img src="./images/instagram.png" alt="Instagram logo">
-                    <img src="./images/youtube.png" alt="Youtube logo">
+                    <div><span>Besuchen Sie uns auf:</span></div>
+                    <div>
+                        <img src="./images/twitter.png" alt="Twitter logo">
+                        <img src="./images/facebook.png" alt="Facebook logo">
+                        <img src="./images/instagram.png" alt="Instagram logo">
+                        <img src="./images/youtube.png" alt="Youtube logo">
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -239,6 +257,7 @@
     </div>
 
     <script src="https://kit.fontawesome.com/483685b425.js" crossorigin="anonymous"></script> <!--ikonice-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

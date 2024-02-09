@@ -64,8 +64,8 @@
 
 #popup {
   position: fixed !important;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 10px 20px;
@@ -133,26 +133,14 @@
 .light-mode #popup * {
   color: #fff !important;
 }
-.light-mode #time-div .container > span {
-  color: #000 !important;
-}
-.light-mode #time-div .container > span > i {
-  color: #000 !important;
+.light-mode #time-div .container * {
+  color: #000;
 }
 .light-mode #time-div .container #mode-div #moon-div {
   background-color: #fff !important;
 }
 .light-mode #time-div .container #mode-div #sun-div {
-  background-color: #fff;
-}
-.light-mode #time-div .container #mode-div #sun-div i {
-  color: #000 !important;
-}
-.light-mode #slider-txt-div {
-  background-color: rgba(255, 255, 255, 0.3) !important;
-}
-.light-mode #slider-txt-div > #slider-txt-container > * {
-  color: #000 !important;
+  background-color: #000;
 }
 .light-mode #food-div-first #first-food-txt-container > * {
   color: #000 !important;
@@ -225,14 +213,17 @@
   display: flex;
   justify-content: end;
 }
+#time-div .container #opentime-txt {
+  display: flex;
+  text-align: right;
+}
 #time-div .container #mode-div {
   cursor: pointer;
   border: 1px solid black;
   display: flex;
-  height: 16px;
   background-color: gray;
   width: 30px;
-  margin-left: 16px;
+  margin-right: 16px;
 }
 #time-div .container #mode-div > div {
   width: 50%;
@@ -255,30 +246,68 @@
 }
 
 #slider-div {
-  height: 62.87vh;
-  background-image: url("../images/imageforslider.jpg");
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
   position: relative;
 }
 #slider-div #slider-txt-div {
-  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: calc(50% - 174px);
-  width: 629px;
-  height: 348px;
+  z-index: 100;
+  top: 25%;
+  left: 0;
+  height: 50%;
+  min-width: 50%;
+  width: 33%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 20%;
 }
-#slider-div #slider-txt-div h1 {
-  font-size: 2.375rem;
+#slider-div #slider-txt-div #slider-txt-container h1 {
+  line-height: 44px;
+  font-size: 38px;
   font-weight: 700;
   padding-bottom: 1rem;
 }
-#slider-div #slider-txt-div #slider-txt-container {
-  margin: 67px 65px 42px 300px;
-}
-#slider-div #slider-txt-div p {
+#slider-div #slider-txt-div #slider-txt-container p {
   font-weight: 300;
   line-height: 150%;
+}
+#slider-div .swiper {
+  width: 100%;
+  height: 60vh;
+}
+#slider-div .swiper .swiper-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#slider-div .swiper .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+}
+#slider-div .swiper .swiper-pagination-bullet-active {
+  background-color: #A62120;
+}
+#slider-div .swiper .swiper-buttons {
+  position: absolute;
+  bottom: 0;
+}
+#slider-div .swiper .swiper-button-prev, #slider-div .swiper .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+#slider-div .swiper .swiper-button-prev:after, #slider-div .swiper .swiper-button-next:after {
+  font-size: 20px;
+}
+#slider-div .swiper .swiper-button-prev:hover, #slider-div .swiper .swiper-button-next:hover {
+  background-color: rgba(166, 33, 32, 0.8);
 }
 
 #food-div-first {
@@ -450,7 +479,7 @@
   margin-left: 10%;
 }
 #food-div-fourth .container #fourth-txt-container {
-  padding: 20px 0;
+  padding: 40px 0;
   width: 60%;
   max-width: 50%;
   display: flex;
@@ -458,20 +487,17 @@
   justify-content: center;
   align-items: center;
 }
-#food-div-fourth .container #fourth-txt-container #fourth-txt {
-  padding: 20px 0;
-}
-#food-div-fourth .container #fourth-txt-container #fourth-txt h1 {
+#food-div-fourth .container #fourth-txt-container h1 {
   font-weight: 700;
   line-height: 42px;
 }
-#food-div-fourth .container #fourth-txt-container #fourth-txt h2 {
+#food-div-fourth .container #fourth-txt-container h2 {
   font-weight: 700;
   font-size: 22px;
   line-height: 20px;
   margin: 10px 0;
 }
-#food-div-fourth .container #fourth-txt-container #fourth-txt p {
+#food-div-fourth .container #fourth-txt-container p {
   line-height: 1.5;
   font-weight: 300;
   padding-top: 5px;
@@ -521,6 +547,9 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+}
+#food-div-sixth .container #sixth-food-first #genussnetz-div #genussnetz-logo-div #genussnetz-logo {
+  max-width: 100%;
 }
 #food-div-sixth .container #sixth-food-first #genussnetz-div #genussnetz-txt {
   display: flex;
@@ -585,6 +614,9 @@
   font-size: 18px;
   line-height: 21px;
 }
+#food-div-sixth .container #sixth-food-third > h1 {
+  text-align: center;
+}
 #food-div-sixth .container #sixth-food-third #lower-slider-div {
   margin: 50px 0;
   height: 300px;
@@ -612,17 +644,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 42%;
 }
 #footer #lighter-footer .container #footer-links {
   display: flex;
   align-items: center;
+  width: 42%;
+  justify-content: end;
 }
 #footer #lighter-footer .container #footer-links img {
   margin: 2px;
-}
-#footer #lighter-footer .container #footer-logo {
-  position: absolute;
-  left: calc(50% - 36px);
 }
 #footer #darker-footer {
   width: 100%;
@@ -674,8 +705,11 @@
   #header ul li {
     margin: 2.5rem 0 2rem 1rem !important;
   }
+  .swiper {
+    height: 50vh !important;
+  }
   #food-div-first .container {
-    padding: 40px 55px !important;
+    padding: 20px 55px !important;
   }
   #food-div-first .container #first-food-txt-container > div {
     margin-top: 20px !important;
@@ -693,12 +727,48 @@
   .container {
     width: 720px;
   }
+  #popup {
+    right: auto !important;
+    left: 50%;
+  }
+  #header #logo {
+    width: 150px !important;
+  }
   #time-div {
     z-index: 5500;
   }
   #time-div > .container {
     width: 100%;
     padding-right: 30px;
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+  #time-div > .container > div:first-child {
+    margin-top: 2px;
+  }
+  #time-div > .container #mode-div {
+    margin-right: 0;
+  }
+  #time-div > .container #opentime-txt {
+    flex-direction: column;
+    align-items: end;
+  }
+  #slider-div #slider-txt-div {
+    position: static !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 20px 0 !important;
+  }
+  #slider-div #slider-txt-div h1, #slider-div #slider-txt-div p {
+    text-align: center;
+  }
+  #slider-div .swiper {
+    height: 50vh;
+  }
+  #slider-div .swiper .swiper-button-prev, #slider-div .swiper .swiper-button-next {
+    display: none !important;
   }
   #header > .container {
     width: 100%;
@@ -756,6 +826,9 @@
     flex-direction: column-reverse;
   }
   #food-div-first > .container #first-food-txt-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     width: 100%;
     align-items: center;
   }
@@ -769,8 +842,17 @@
   #food-div-second {
     flex-direction: column;
   }
+  #food-div-second #second-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #food-div-second #second-txt h1 {
+    text-align: center;
+  }
   #food-div-second #second-txt ul {
     text-align: center;
+    list-style-position: inside;
   }
   #food-div-second > img {
     max-width: none;
@@ -778,10 +860,104 @@
     height: auto;
     object-fit: cover;
   }
+  #food-div-third #third-food-txt > h1 {
+    margin-top: 50px !important;
+  }
+  #food-div-third #third-food-txt > p {
+    width: 100% !important;
+  }
+  #food-div-fourth {
+    flex-direction: column;
+    align-items: center;
+  }
+  #food-div-fourth #fourth-food-container {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #food-div-fourth #fourth-food-container #fourth-txt-container > h1, #food-div-fourth #fourth-food-container #fourth-txt-container > h2, #food-div-fourth #fourth-food-container #fourth-txt-container > p {
+    text-align: center;
+  }
+  #food-div-fourth > img {
+    max-width: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  #food-div-sixth #sixth-food-first > #genussnetz-div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  #food-div-sixth #sixth-food-first > #genussnetz-div > #genussnetz-logo-div {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px !important;
+  }
+  #food-div-sixth #sixth-food-first > #genussnetz-div > #genussnetz-txt {
+    width: 100% !important;
+    align-items: center !important;
+  }
+  #food-div-sixth #sixth-food-first > #genussnetz-div > #genussnetz-txt > h1 {
+    text-align: center;
+  }
+  #food-div-sixth #sixth-food-second #auszeichnungen-div {
+    margin: 10px 0 !important;
+  }
+  #food-div-sixth #sixth-food-second #auszeichnungen-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  #food-div-sixth #sixth-food-second #auszeichnungen-content > #auszeichnungen-txt {
+    width: 100% !important;
+    margin: 10px auto !important;
+  }
+  #food-div-sixth #sixth-food-second #auszeichnungen-content > #auszeichnungen-imgs {
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+  #food-div-sixth #sixth-food-second #auszeichnungen-content > #auszeichnungen-imgs > div {
+    width: 50% !important;
+    margin: 10px auto !important;
+  }
+  #footer > #lighter-footer > .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #footer > #lighter-footer > .container > div {
+    text-align: center;
+    padding-top: 20px;
+  }
+  #footer > #lighter-footer > .container > #footer-links {
+    flex-direction: column;
+  }
+  #footer > #lighter-footer > .container > #footer-links > :first-child {
+    margin-bottom: 10px;
+  }
+  #footer > #darker-footer > .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer > #darker-footer > .container > div {
+    margin-top: 10px;
+  }
 }
 @media screen and (max-width: 767.9px) {
   .container {
     width: 540px;
+  }
+  #third-food-container {
+    padding: 0 20px !important;
+    width: 100%;
+  }
+  #food-div-sixth .container {
+    padding: 0 20px !important;
+  }
+  .swiper {
+    height: 35vh !important;
   }
   #third-food-imgs img {
     min-width: 40%;
@@ -790,5 +966,16 @@
 @media screen and (max-width: 575.9px) {
   .container {
     width: 100%;
+  }
+  #popup {
+    min-width: 80vw;
+  }
+  #header #logo {
+    width: 90px !important;
+  }
+  #first-food-txt-container > div {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
